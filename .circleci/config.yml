@@ -24,14 +24,12 @@ jobs:
       - restore_cache:
           keys:
             - node_modules
+      - run: npm install
       - run: npm run test
   analyze:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - node_modules
       - run: npm audit
 
 # Invoke jobs via workflows
