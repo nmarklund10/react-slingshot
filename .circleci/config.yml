@@ -10,7 +10,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - run: npm run build
+      - run: npm install
       - save_cache:
           key: node_modules
           paths:
